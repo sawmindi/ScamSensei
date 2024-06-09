@@ -1,0 +1,47 @@
+/* CSS for image slider */
+.imgStyle {
+    @apply bg-gradient-to-r from-gray-900 to-gray-500;
+    position: relative;
+    overflow: hidden;
+}
+
+.cartoonImg1, .cartoonImg2, .cartoonImg3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain; 
+    background-position: center center; 
+    z-index: 1;
+    opacity: 0; 
+}
+
+.cartoonImg1 {
+    background: url('/login/img1.png') no-repeat center center;
+    animation: slideIn 30s ease-in-out 0s infinite;
+    background-size: 200px 200px;
+}
+
+.cartoonImg2 {
+    background: url('/login/img2.png') no-repeat center center;
+    animation: slideIn 30s ease-in-out 10s infinite; /* Delayed start */
+    background-size: 200px 200px;
+}
+
+.cartoonImg3 {
+    background: url('/login/img3.png') no-repeat center center;
+    animation: slideIn 30s ease-in-out 20s infinite; /* Delayed start */
+    background-size: 200px 200px;
+}
+
+/* Keyframes for image slider */
+@keyframes slideIn {
+    0%, 33.333%, 100% { opacity: 0; transform: translateX(100%); }
+    5%, 25.333% { opacity: 1; transform: translateX(0); } /* Visible and in position */
+    30%, 30.333% { opacity: 0; transform: translateX(-100%); } /* Begin to slide out */
+}
+
+
